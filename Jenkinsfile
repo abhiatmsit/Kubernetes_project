@@ -11,7 +11,7 @@ pipeline{
         echo "testing the application"
       }
     }
-    post{
+    post ('message test'){
       success{
         echo "testing application is successfule"
       }
