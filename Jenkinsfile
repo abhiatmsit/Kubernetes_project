@@ -10,6 +10,7 @@ pipeline{
     stage{
       echo "deploying the application"
       sh "uptime"
+      sh "ps"
     }
   }
 }
