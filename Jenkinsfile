@@ -1,6 +1,11 @@
 pipeline{
   agent any
   stages {
+    when {
+      expression {
+        BRANCH_NAME=="main" && CODE_CHANGES= true
+      }
+    }
     stage ("builds"){
       steps{
         echo "building the application"
@@ -10,10 +15,8 @@ pipeline{
       steps{
         echo "testing the application"
       }
-    }
-    post ('message test'){
-      success{
-        echo "testing application is successfule"
+      post('test') {
+        echo "test is successful"
       }
     }
     stage ("deploy"){
