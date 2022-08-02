@@ -20,6 +20,7 @@ pipeline{
 		success {
 			echo "testing application is working"
 		}
+	}
     }
     stage ("deploy"){
       steps {
