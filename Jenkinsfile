@@ -15,9 +15,11 @@ pipeline{
       steps{
         echo "testing the application"
       }
-      post('test') {
-        echo "test is successful"
-      }
+    post {
+    	
+		success {
+			echo "testing application is working"
+		}
     }
     stage ("deploy"){
       steps {
