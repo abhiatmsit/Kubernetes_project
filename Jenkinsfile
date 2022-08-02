@@ -1,12 +1,12 @@
 pipeline{
   agent any
   stages {
-    when {
-      expression {
-        BRANCH_NAME=="main" && CODE_CHANGES==true
-      }
-    }
     stage ("builds"){
+    	when {
+		expression {
+			BRANCH_NAME=='main' && CODE_CHANGES==true
+		}		
+	}
       steps{
         echo "building the application"
       }
