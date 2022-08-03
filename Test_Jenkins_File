@@ -16,30 +16,30 @@ pipeline{
                                 }
                         }
                         steps{
-                                echo build is in progress
+                                echo 'build is in progress'
                         }
                 }
 
                 stage ('test') {
                         steps {
-                                echo testing is in progress
+                                echo 'testing is in progress'
                         }
         }
                 stage('deployment'){
                         steps {
-                                echo deployment is in progress
+                                echo 'deployment is in progress'
                                 echo "Deploying Version ${params.VERSION}"
                                 }
         }
         post {
                 success {
-                        echo pipeline is success
+                        echo 'pipeline is success'
                 }
                 always{
-                        echo this message will always get printed
+                        echo 'this message will always get printed'
                 }
                 failure {
-                        echo this is failure message
+                        echo 'this is failure message'
                 }
         }
 
