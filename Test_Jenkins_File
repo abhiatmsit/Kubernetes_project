@@ -42,7 +42,7 @@ pipeline{
                 stage ('grovy_validation') {
                         steps{
                                 script {
-                                        gv.deploy_on_prod
+                                        gv.deploy_on_prod()
                                 }
                         }
                 }
