@@ -9,7 +9,7 @@ pipeline{
                 bolleanParam (name: 'ExecuteTest', defaultValue: true, description:'')
         }
         stages {
-                stage('build){
+                stage('build'){
                         when {
                                 expression {
                                         params.ExecuteTest==true
