@@ -1,3 +1,4 @@
+def gv
 pipeline{
         agent any
         tools {
@@ -9,6 +10,11 @@ pipeline{
                 booleanParam (name: 'ExecuteTest', defaultValue: true, description:'')
         }
         stages {
+                stage ('init'){
+                        script {
+                                gv = load ("script.groovy")
+                        }
+                }
                 stage('build'){
                         when {
                                 expression {
@@ -31,6 +37,13 @@ pipeline{
                                 echo "Deploying Version ${params.VERSION}"
                                 }
                          }
+                stage ('grovy_validation') {
+                        steps{
+                                script {
+                                        gv.deploy_on_prod
+                                }
+                        }
+                }
         }
         post {
                 success {
