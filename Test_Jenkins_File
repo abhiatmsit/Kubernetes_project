@@ -30,6 +30,7 @@ pipeline{
                                 echo 'deployment is in progress'
                                 echo "Deploying Version ${params.VERSION}"
                                 }
+                         }
         }
         post {
                 success {
@@ -42,7 +43,5 @@ pipeline{
                         echo 'this is failure message'
                 }
         }
-
-    }
 
 }
