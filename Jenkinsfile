@@ -25,13 +25,13 @@ pipeline{
       }
   post {
     always{
-      echo "application build,deploy and test is successfule"
+      echo "application build,deploy and test is successfull"
     }
     failure{
       echo "application build deploy and test is unsuccessfull"
     }
     success{
-      echo "just printing the success message"
+      echo "Application build, deploy have been  successfull"
     }
   }  
     }
